@@ -47,8 +47,8 @@ learn how to write the python crawler
 所以要支持这些功能：
 
 1. 使用相关的 **Handler处理器** 来创建特定功能的处理器对象；
-2. 然后通过 **urllib2.build_opener()**方法使用这些处理器对象，创建自定义opener对象（可以接受多个处理器）；
-3. 使用自定义的opener对象，调用**open()**方法发送请求。
+2. 然后通过 **urllib2.build_opener()** 方法使用这些处理器对象，创建自定义opener对象（可以接受多个处理器）；
+3. 使用自定义的opener对象，调用 **open()** 方法发送请求。
 
 - 如果程序里所有的请求都使用自定义的opener，可以使用urllib.request.install_opener() 将自定义的opener对象定义为全局opener，表示如果之后凡是调用urlopen，都将使用这个opener（根据自己的需求来选择）
 
