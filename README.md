@@ -36,3 +36,28 @@ learn how to write the python crawler
 2. 聚焦爬虫：
     - 爬虫程序员写的针对某种内容的爬虫
     - 面向主题、面向需求
+
+
+
+**Handler处理器 和 自定义Opener**
+
+- opener是 urllib.request.OpenerDirector 的实例，我们之前一直都在使用的urlopen，它是一个特殊的opener（也就是模块帮我们构建好的）。
+
+- 但是基本的urlopen()方法不支持代理、cookie等其他的HTTP/HTTPS高级功能。
+所以要支持这些功能：
+
+1. 使用相关的 **Handler处理器** 来创建特定功能的处理器对象；
+2. 然后通过 **urllib2.build_opener()**方法使用这些处理器对象，创建自定义opener对象（可以接受多个处理器）；
+3. 使用自定义的opener对象，调用**open()**方法发送请求。
+
+- 如果程序里所有的请求都使用自定义的opener，可以使用urllib.request.install_opener() 将自定义的opener对象定义为全局opener，表示如果之后凡是调用urlopen，都将使用这个opener（根据自己的需求来选择）
+
+
+
+**HTTPPasswordMgrWithDefaultRealm()**
+
+这个类将创建一个密码管理对象，用来保存和HTTP请求相关的用户名和密码，主要应用两个场景：
+
+- 验证代理授权的用户名和密码 (ProxyBasicAuthHandler())
+- 验证Web客户端的的用户名和密码 (HTTPBasicAuthHandler())
+
