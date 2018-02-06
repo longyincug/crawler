@@ -37,7 +37,7 @@ learn how to write the python crawler
     - 爬虫程序员写的针对某种内容的爬虫
     - 面向主题、面向需求
 
-
+***
 
 **Handler处理器 和 自定义Opener**
 
@@ -52,7 +52,7 @@ learn how to write the python crawler
 
 - 如果程序里所有的请求都使用自定义的opener，可以使用urllib.request.install_opener() 将自定义的opener对象定义为全局opener，表示如果之后凡是调用urlopen，都将使用这个opener（根据自己的需求来选择）
 
-
+***
 
 **HTTPPasswordMgrWithDefaultRealm()**
 
