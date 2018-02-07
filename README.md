@@ -38,10 +38,6 @@ learn how to write the python crawler
     - 面向主题、面向需求
 
 ***
-<<<<<<< HEAD
-
-=======
->>>>>>> da14569e9427548b10d1463e6f3060da0c2541f5
 
 **Handler处理器 和 自定义Opener**
 
