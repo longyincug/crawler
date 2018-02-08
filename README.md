@@ -98,3 +98,36 @@ learn how to write the python crawler
     - XPath
     - CSS选择器
     - 正则表达式
+    
+***
+
+**数据提取之JSON与JsonPATH**
+
+JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式，它使得人们很容易的进行阅读和编写。同时也方便了机器进行解析和生成。适用于进行数据交互的场景，比如网站前台与后台之间的数据交互。
+
+json简单说就是javascript中的对象和数组，所以这两种结构就是对象和数组两种结构，通过这两种结构可以表示各种复杂的结构
+
+- 对象：
+
+    对象在js中表示为{ }括起来的内容，数据结构为 { key：value, key：value, ... }的键值对的结构，在面向对象的语言中，key为对象的属性，value为对应的属性值，所以很容易理解，取值方法为 对象.key 获取属性值，这个属性值的类型可以是数字、字符串、数组、对象这几种。
+
+- 数组：
+    
+    数组在js中是中括号[ ]括起来的内容，数据结构为 ["Python", "javascript", "C++", ...]，取值方式和所有语言中一样，使用索引获取，字段值的类型可以是 数字、字符串、数组、对象几种。
+
+
+**import JSON**
+
+- json.dumps()
+    
+    实现python类型转化为json字符串
+
+- json.loads()
+    
+    把Json格式字符串解码转换成Python对象 
+    
+**JsonPath**
+
+- JsonPath 是一种信息抽取类库，是从JSON文档中抽取指定信息的工具，提供多种语言实现版本，包括：Javascript, Python， PHP 和 Java。
+
+- JsonPath 对于 JSON 来说，相当于 XPATH 对于 XML。
