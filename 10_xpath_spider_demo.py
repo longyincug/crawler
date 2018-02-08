@@ -17,7 +17,8 @@ class ImageSpider():
         self.name = name
         self.start = start
         self.end = end
-        self.headers = {"User-Agent":"Mozilla/4.0(compatible;MSIE7.0;WindowsNT5.1;360SE)"}
+        # web服务器会针对于不同的浏览器发送不同的页面，所以可能出现xpath helper能匹配，程序却匹配不出的情况，headers尽量用IE标准
+        self.headers = {"User-Agent":"Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0)"}
 
     def load_page(self, pn):
         """
