@@ -25,6 +25,7 @@ def deal_item(selector):
         img = item.xpath('./div/a/img[@class="illustration"]/@src')
         # 忽略内容中的br，获取标签下的所有内容，用'string(.)'
         content = item.xpath('./a/div[@class="content"]/span')[0].xpath('string(.)')
+        # content = item.xpath('./a/div[@class="content"]/span//text()')
         good = item.xpath('./div/span/i[@class="number"]')[0].text
         comment = item.xpath('./div/span/a/i[@class="number"]')[0].text
 
