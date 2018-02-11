@@ -38,12 +38,23 @@ def deal_item(selector):
         }
         write_item(data)
 
-url = "https://www.qiushibaike.com/8hr/page/1/"
+def main():
+    # 爬取糗事百科前10页的内容
+    for page in range(1, 11):
 
-headers = {"User-Agent":"Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0)"}
+        url = "https://www.qiushibaike.com/8hr/page/"+ str(page) +"/"
 
-response = requests.get(url, headers=headers)
+        headers = {"User-Agent":"Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0)"}
 
-selector = etree.HTML(response.content)
+        response = requests.get(url, headers=headers)
 
-deal_item(selector)
+        selector = etree.HTML(response.content)
+
+        deal_item(selector)
+
+if __name__ == '__main__':
+    import time
+    start_time = time.time()
+    main()
+    end_time = time.time()
+    print("爬取解析工作共耗时%s秒" % str(end_time - start_time))
