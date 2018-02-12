@@ -103,6 +103,10 @@ class NewsSpider():
             f.write(content)
 
 if __name__ == "__main__":
+    import time
+
+    start_time = time.time()
+
     url_list = [
         ("通知公告", "http://www.cug.edu.cn/index/tzgg.htm"),
         # ("地大要闻", "http://www.cug.edu.cn/index/ddyw.htm"),
@@ -111,7 +115,5 @@ if __name__ == "__main__":
     news_spider = NewsSpider(url_list)
     news_spider.start_work()
 
-
-
-
-
+    end_time = time.time()
+    print("爬取解析工作共耗时%s秒" % str(end_time - start_time))
