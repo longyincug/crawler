@@ -99,7 +99,7 @@ class NewsSpider():
 
     def write_news(self, data, name):
         with open(name + '.json', 'a', encoding='utf-8') as f:
-            content = json.dumps(data, ensure_ascii=False)
+            content = json.dumps(data, ensure_ascii=False, indent=4)
             f.write(content)
 
 if __name__ == "__main__":
