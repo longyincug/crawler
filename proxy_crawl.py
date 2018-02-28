@@ -13,7 +13,7 @@ for i in range(1,34):
     selector = etree.HTML(response.text)
     items = selector.xpath('//table[@bordercolor="#6699ff"]/tr')
 
-    for item in items[1:-1]:
+    for item in items[1:]:
         word = item.xpath('./td')
         host = word[0].text
         port = word[1].text
