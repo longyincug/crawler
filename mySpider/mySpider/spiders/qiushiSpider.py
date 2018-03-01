@@ -3,11 +3,11 @@ from mySpider.items import MyspiderItem
 
 class QiushiSpider(scrapy.Spider):
     name = 'qiushi'
-    allowed_domains = ['https://www.qiushibaike.com/']
+    allowed_domains = ['qiushibaike.com']
     start_urls = ['https://www.qiushibaike.com/']
 
     def parse(self, response):
-        content_list = [] 
+        #content_list = [] 
         # 不加extract()结果为xpath匹配对象
         for each in response.xpath('//div[contains(@class,"article block untagged mb15")]'):
             item = MyspiderItem() 
@@ -19,9 +19,11 @@ class QiushiSpider(scrapy.Spider):
             item['name'] = name
             item['img'] = img
             item['content'] = content
-            content_list.append(item)
+            #content_list.append(item)
+            # 把数据转到pipeline进行处理
+            yield item
 
-        return content_list
+        #return content_list
             
 
 
