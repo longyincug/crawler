@@ -39,9 +39,9 @@ class BaiduSpider:
         count = 0
         for each in content_list:
             print(each)
-            self.save(requests.get(each,headers=self.headers).content, count)
+            self.save(requests.get(each, headers=self.headers).content, count)
             count += 1
-            print("正在保存第%d张图片"%count)
+            print("正在保存第%d张图片" % count)
         self.driver.quit()
 
 
